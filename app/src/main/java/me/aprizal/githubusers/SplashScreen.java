@@ -1,21 +1,22 @@
 package me.aprizal.githubusers;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 
 import de.hdodenhof.circleimageview.CircleImageView;
+import me.aprizal.githubusers.databinding.ActivitySplashScreenBinding;
 import me.aprizal.githubusers.main.MainActivity;
 
+@SuppressLint("CustomSplashScreen")
 public class SplashScreen extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_splash_screen);
-
-        CircleImageView circleImageView = findViewById(R.id.img_icon);
-        circleImageView.setImageResource(R.mipmap.ic_launcher);
+        ActivitySplashScreenBinding binding = ActivitySplashScreenBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
 
         Thread thread = new Thread(() -> {
             try {

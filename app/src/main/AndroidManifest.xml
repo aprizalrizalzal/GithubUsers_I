@@ -13,13 +13,18 @@
         tools:ignore="AllowBackup">
         <activity
             android:name=".detail.DetailActivity"
+            android:exported="false"
             android:parentActivityName=".main.MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".main.MainActivity" />
         </activity>
-        <activity android:name=".main.MainActivity" />
-        <activity android:name=".SplashScreen">
+        <activity
+            android:name=".main.MainActivity"
+            android:exported="false"/>
+        <activity
+            android:name=".SplashScreen"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
